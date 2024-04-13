@@ -45,3 +45,27 @@ List<Map<String, dynamic>> template_2 = [
     "Button": "sensational",
   }
 ];
+
+ List<String> template_3 = [
+  "vertical.png",
+  "shape2.png",
+  "shape3.png",
+];
+
+List<Map<String, dynamic>> template_4 = [
+  {
+    "places": "Accra",
+  },
+  {
+    "places": "Kumasi",
+  },
+  {
+    "places": "Nungua",
+  },
+  {
+    "places": "Teshie",
+  },
+  {
+    "places": "Nsawam",
+  },
+];
