@@ -42,10 +42,11 @@ class HomePage extends StatelessWidget {
                         fillColor: Colors.white,
                         hintText: "Miotso prampram",
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(
-                              color: Colors.yellow,
-                            )),
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(
+                            color: Colors.yellow,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -185,7 +186,7 @@ class HomePage extends StatelessWidget {
                             child: FilledButton(
                               style: FilledButton.styleFrom(
                                 backgroundColor:
-                                    const Color.fromRGBO(35, 79, 104, 1),
+                                    const Color.fromRGBO(245, 244, 248, 0.5),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16),
                                 ),
@@ -196,7 +197,7 @@ class HomePage extends StatelessWidget {
                                 style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.normal,
-                                  color: Colors.white,
+                                  color: Color.fromRGBO(35, 79, 104, 1),
                                 ),
                               ),
                             ),
@@ -209,7 +210,7 @@ class HomePage extends StatelessWidget {
                       height: 170,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: 3,
+                        // itemCount: 3,
                         itemBuilder: (context, index) {
                           return Container(
                             width: 275,
@@ -414,9 +415,9 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
                     const Padding(
-                      padding: EdgeInsets.all(15.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -440,61 +441,246 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      child: ListView(
-                        shrinkWrap: true,
-                        children: [
-                          SizedBox(
-                            height: 80,
-                            child: ListView.separated(
-                              controller: ScrollController(),
-                              physics: const BouncingScrollPhysics(),
-                              padding: const EdgeInsets.all(5),
-                              scrollDirection: Axis.horizontal,
-                              itemCount: template_3.length,
-                              separatorBuilder: (_, __) =>
-                                  const SizedBox(width: 8),
-                              itemBuilder: (context, int i) {
-                                String pics = "assets/${template_3[i]}";
-                                return SizedBox(
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: FilledButton(
-                                      onPressed: () {},
-                                      style: FilledButton.styleFrom(
-                                        backgroundColor: const Color.fromRGBO(
-                                            245, 244, 248, 100),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(90),
+                      child: SizedBox(
+                        height: 80,
+                        child: ListView.separated(
+                          controller: ScrollController(),
+                          physics: const BouncingScrollPhysics(),
+                          padding: const EdgeInsets.all(5),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: template_3.length,
+                          separatorBuilder: (_, __) => const SizedBox(width: 8),
+                          itemBuilder: (context, int i) {
+                            String pics = "assets/${template_3[i]}";
+                            return SizedBox(
+                              child: FilledButton(
+                                onPressed: () {},
+                                style: FilledButton.styleFrom(
+                                  backgroundColor:
+                                      const Color.fromRGBO(245, 244, 248, 100),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(90),
+                                  ),
+                                  padding: const EdgeInsets.all(5)
+                                      .copyWith(right: 20),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Container(
+                                      width: 70,
+                                      margin: EdgeInsets.zero,
+                                      padding: EdgeInsets.zero,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          image: AssetImage(pics),
+                                          fit: BoxFit.fill,
                                         ),
-                                        padding: const EdgeInsets.all(5)
-                                            .copyWith(right: 20),
                                       ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
+                                    ),
+                                    const SizedBox(width: 5),
+                                    Flexible(
+                                      child: Text(
+                                        template_4[i]["places"],
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          color: Color.fromRGBO(37, 43, 92, 1),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Top Estate Agent",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(37, 43, 92, 1),
+                            ),
+                          ),
+                          Text(
+                            "explore",
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(35, 79, 104, 1),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Carousel image container is suppose to be here
+                    SizedBox(
+                      height: 100,
+                      child: CarouselSlider.builder(
+                        options: CarouselOptions(
+                          height: 100,
+                          enableInfiniteScroll: true,
+                          viewportFraction: .25,
+                          //  autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 3),
+                          padEnds: false,
+                          scrollDirection: Axis.horizontal,
+                        ),
+                        itemCount: 3,
+                        itemBuilder: (context, index, realIndex) => Container(
+                          margin: const EdgeInsets.all(5).copyWith(left: 0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 70,
+                                width: 70,
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(245, 244, 248, 2),
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          "assets/shape3.png",
+                                        ),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                "Daniel",
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Explore Nearby Estate",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(37, 43, 92, 1),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 300,
+                      // width: double.maxFinite,
+                      child: GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 10,
+                          crossAxisSpacing: 3,
+                        ),
+                        scrollDirection: Axis.vertical,
+                        // itemCount: 8,
+                        itemBuilder: (context, index) => Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 180,
+                              width: 140,
+                              decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromRGBO(245, 244, 248, 0.5),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Container(
+                                      height: 125,
+                                      width: 125,
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                          image:
+                                              AssetImage("assets/vertical.png"),
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
                                         children: [
-                                          Container(
-                                            width: 70,
-                                            margin: EdgeInsets.zero,
-                                            padding: EdgeInsets.zero,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: DecorationImage(
-                                                image: AssetImage(pics),
-                                                fit: BoxFit.fill,
+                                          const Padding(
+                                            padding: EdgeInsets.only(top: 10),
+                                            child: SizedBox(
+                                              height: 20,
+                                              child: CircleAvatar(
+                                                backgroundColor: Colors.green,
+                                                child: Icon(
+                                                  Icons.favorite,
+                                                  size: 10,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          const SizedBox(width: 5),
-                                          Flexible(
-                                            child: Text(
-                                              template_4[i]["places"],
-                                              overflow: TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                fontSize: 15,
-                                                color: Color.fromRGBO(
-                                                    37, 43, 92, 1),
-                                                fontWeight: FontWeight.bold,
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 10, bottom: 10),
+                                            child: Container(
+                                              width: 85,
+                                              padding: const EdgeInsets.all(8),
+                                              // margin: const EdgeInsets.only(
+                                              //   left: 10,
+                                              // ),
+                                              decoration: BoxDecoration(
+                                                color: Colors.blue,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: const Row(
+                                                children: [
+                                                  Text(
+                                                    "\$ 290",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                      FontWeight.bold,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    "/month",
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                      FontWeight.normal,
+                                                      color: Colors.white,
+                                                    ),
+                                                  )
+                                                ],
                                               ),
                                             ),
                                           ),
@@ -502,84 +688,68 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                );
-                              },
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          const Padding(
-                            padding: EdgeInsets.all(15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Top Estate Agent",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromRGBO(37, 43, 92, 1),
-                                  ),
-                                ),
-                                Text(
-                                  "explore",
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromRGBO(35, 79, 104, 1),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            child: CarouselSlider.builder(
-                              options: CarouselOptions(
-                                enableInfiniteScroll: true,
-                                viewportFraction: .25,
-                                //  autoPlay: true,
-                                autoPlayInterval: const Duration(seconds: 3),
-                                scrollDirection: Axis.horizontal,
-                              ),
-                              itemCount: 3,
-                              itemBuilder: (context, index, realIndex) =>
-                                  Container(
-                                margin: const EdgeInsets.all(5),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 70,
-                                      width: 70,
-                                      decoration: BoxDecoration(
-                                        color: const Color.fromRGBO(
-                                            245, 244, 248, 2),
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5),
-                                        child: Container(
-                                          width: 50,
-                                          decoration: const BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                "assets/shape3.png",
-                                              ),
-                                              fit: BoxFit.fill,
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 20, bottom: 1),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Mill Spell House",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                Color.fromRGBO(37, 43, 92, 1),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(right: 20),
+                                          child: SizedBox(
+                                            width: double.infinity,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow,
+                                                  size: 15,
+                                                ),
+                                                Text(
+                                                  "4.9",
+                                                  style: TextStyle(
+                                                    fontSize: 10,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.location_on,
+                                                  size: 15,
+                                                ),
+                                                Text(
+                                                  "Miotso",
+                                                  style: TextStyle(
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                    const Text(
-                                      "Daniel",
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ),
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -588,6 +758,49 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(0),
+        ),
+        child: BottomNavigationBar(
+          onTap: (value) {},
+          // backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: 3,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                CupertinoIcons.home,
+                color: Colors.black,
+              ),
+              label: "Home",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                CupertinoIcons.search,
+                color: Colors.black,
+              ),
+              label: "stats",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite_outline,
+                color: Colors.black,
+              ),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                CupertinoIcons.person,
+                color: Colors.black,
+              ),
+              label: "stats",
+            ),
+          ],
+        ),
       ),
     );
   }
