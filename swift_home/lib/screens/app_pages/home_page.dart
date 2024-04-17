@@ -2,9 +2,16 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swift_home/screens/list_logs/data.dart';
+// import 'packa';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -667,7 +674,7 @@ class HomePage extends StatelessWidget {
                                                     style: TextStyle(
                                                       fontSize: 12,
                                                       fontWeight:
-                                                      FontWeight.bold,
+                                                          FontWeight.bold,
                                                       color: Colors.white,
                                                     ),
                                                   ),
@@ -676,7 +683,7 @@ class HomePage extends StatelessWidget {
                                                     style: TextStyle(
                                                       fontSize: 10,
                                                       fontWeight:
-                                                      FontWeight.normal,
+                                                          FontWeight.normal,
                                                       color: Colors.white,
                                                     ),
                                                   )
@@ -758,49 +765,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(0),
-        ),
-        child: BottomNavigationBar(
-          onTap: (value) {},
-          // backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          elevation: 3,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.home,
-                color: Colors.black,
-              ),
-              label: "Home",
-              backgroundColor: Colors.white,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.search,
-                color: Colors.black,
-              ),
-              label: "stats",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite_outline,
-                color: Colors.black,
-              ),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.person,
-                color: Colors.black,
-              ),
-              label: "stats",
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swift_home/screens/app_pages/home_page.dart';
+import 'package:swift_home/home_screen.dart';
+// import 'package:swift_home/screens/app_pages/home_page.dart';
 import 'package:swift_home/screens/list_logs/data.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -157,7 +158,7 @@ class MyRegisterPage extends State<RegisterPage> {
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                        builder: (context) => const MainHomeScreen(),
                       ),
                       (Route<dynamic> route) => false,
                     );

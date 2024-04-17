@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swift_home/screens/app_pages/home_page.dart';
+import 'package:swift_home/home_screen.dart';
+// import 'package:swift_home/screens/app_pages/home_page.dart';
 import 'package:swift_home/screens/pages/logins/register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -68,7 +69,7 @@ class MyLoginPage extends State<LoginPage> {
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
                         context,
-                        MaterialPageRoute(builder: (context) => const HomePage()),
+                        MaterialPageRoute(builder: (context) => const MainHomeScreen()),
                         (Route<dynamic> route) => false
                       );
                     },
