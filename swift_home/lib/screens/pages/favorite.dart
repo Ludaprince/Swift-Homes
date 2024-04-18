@@ -9,11 +9,12 @@ class FavoriteScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 100,
-              width: 100,
+              height: 350,
+              width: 380,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
@@ -21,7 +22,17 @@ class FavoriteScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            const Text(
+              "Adding of selected favourite catalogs is entering here",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 34,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              ),
+
           ],
         ),
       ),
