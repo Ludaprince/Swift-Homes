@@ -24,15 +24,34 @@ class FavoriteScreen extends StatelessWidget {
               ),
             ),
             const Text(
-              "Adding of selected favourite catalogs is entering here",
+              "Your Favourite Page is",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 34,
+                fontSize: 25,
+                fontWeight: FontWeight.normal,
+                color: Color.fromRGBO(31, 76, 107, 1),
+              ),
+            ),
+            const SizedBox(height: 5),
+            const Text(
+              "empty",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(31, 76, 107, 1),
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Click add button above to start exploring and choose your favourite estate",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
                 color: Colors.black,
               ),
-              ),
-
+            ),
           ],
         ),
       ),
