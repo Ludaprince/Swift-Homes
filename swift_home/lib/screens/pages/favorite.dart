@@ -9,10 +9,19 @@ class FavoriteScreen extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 50, left: 20),
+            padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                const Text(
+                  "0 estates",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromRGBO(31, 76, 107, 1),
+                  ),
+                ),
                 SizedBox(
                   child: FilledButton(
                     onPressed: () {},
@@ -30,11 +39,11 @@ class FavoriteScreen extends StatelessWidget {
                           width: 70,
                           margin: EdgeInsets.zero,
                           padding: EdgeInsets.zero,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage("assets/shape1.png"),
-                              fit: BoxFit.fill,
+                          child: const CircleAvatar(
+                            backgroundColor: Colors.green,
+                            child: Icon(
+                              Icons.favorite,
+                              size: 10,
                             ),
                           ),
                         ),
