@@ -12,13 +12,17 @@ class FavoriteScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              height: 350,
-              width: 380,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    "assets/add_favorite.png",
+            SizedBox(
+              height: 230,
+              width: double.infinity,
+              child: Container(
+                // height: 150,
+                // width: 100,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/add_favorite.png",
+                    ),
                   ),
                 ),
               ),
@@ -32,7 +36,7 @@ class FavoriteScreen extends StatelessWidget {
                 color: Color.fromRGBO(31, 76, 107, 1),
               ),
             ),
-            const SizedBox(height: 5),
+            // const SizedBox(height: 5),
             const Text(
               "empty",
               textAlign: TextAlign.center,
