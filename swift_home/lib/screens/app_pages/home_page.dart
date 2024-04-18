@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                             child: FilledButton(
                               style: FilledButton.styleFrom(
                                 backgroundColor:
-                                    const Color.fromRGBO(245, 244, 248, 0.5),
+                                    const Color.fromRGBO(31, 76, 107, 1),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16),
                                 ),
@@ -204,7 +204,8 @@ class _HomePageState extends State<HomePage> {
                                 style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.normal,
-                                  color: Color.fromRGBO(35, 79, 104, 1),
+                                  color: Colors.white
+                                  // color: Color.fromRGBO(35, 79, 104, 1),
                                 ),
                               ),
                             ),
