@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 
@@ -56,16 +55,31 @@ class SearchPage extends StatelessWidget {
         width: 50,
         height: 50,
         decoration: BoxDecoration(
-          color: Colors.grey,
+          color: const Color.fromRGBO(245, 244, 248, 1),
           borderRadius: BorderRadius.circular(30),
         ),
         child: const Icon(Icons.arrow_back),
       ),
       centerTitle: true,
-      title: const Text("Search"),
-      // actions: [
-        
-      // ],
+      title: const Text("Search result",
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 16,
+        color: Color.fromRGBO(37, 43, 92, 1),
+      ),
+      ),
+      actions: [
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 3),
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            color: const Color.fromRGBO(245, 244, 248, 1),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: const Icon(Icons.filter),
+        ),
+      ],
     );
   }
 }
@@ -76,7 +90,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final Widget? title;
   final bool? centerTitle;
-  final double? actions;
+  final List<Widget>? actions;
 
   const CustomAppbar(
       {super.key,
@@ -99,6 +113,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: title,
       titleSpacing: 0,
       centerTitle: centerTitle ?? false,
+      actions: actions,
     );
   }
 
