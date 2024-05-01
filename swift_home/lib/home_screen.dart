@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:swift_home/screens/app_pages/home_page.dart';
+import 'package:swift_home/screens/app_pages/profile_page.dart';
+import 'package:swift_home/screens/app_pages/search_page.dart';
 import 'package:swift_home/screens/pages/favorite.dart';
 
 class MainHomeScreen extends StatefulWidget {
@@ -11,6 +14,8 @@ class MainHomeScreen extends StatefulWidget {
 }
 
 class MainHomeScreenState extends State<MainHomeScreen> {
+
+  TextEditingController searchController = TextEditingController();
 
   int index = 0;
   late Color selectedItem = Colors.blue;
@@ -67,7 +72,8 @@ class MainHomeScreenState extends State<MainHomeScreen> {
         ),
       ),
       body: index == 0 ? const HomePage() : 
-      index == 2 ? const FavoriteScreen() : const HomePage(),
+      index == 1 ? const SearchPage() : 
+      index == 2 ? const FavoriteScreen() : const ProfilePage(),
     );
   }
 }
