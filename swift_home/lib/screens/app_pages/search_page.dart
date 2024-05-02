@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 
@@ -40,6 +41,78 @@ class SearchPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
+              SizedBox(
+                child: Row(
+                  children: [
+                    const Text(
+                      "Found ",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                        color: Color.fromRGBO(37, 43, 92, 1),
+                      ),
+                    ),
+                    const Text(
+                      "0 ",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(37, 43, 92, 1),
+                      ),
+                    ),
+                    const Text(
+                      "estates",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                        color: Color.fromRGBO(37, 43, 92, 1),
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      width: 93,
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(161, 165, 193, 1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Image(
+                              height: 12,
+                              width: 12,
+                              image: AssetImage("assets/roundpic.png"),
+                            ),
+                          ),
+                          Container(
+                            height: 24,
+                            width: 36,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              color: Colors.white,
+                            ),
+                            child: const Row(
+                              children: [
+                                Image(
+                                  height: 12,
+                                  width: 12,
+                                  image: AssetImage("assets/roundpic.png"),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -61,12 +134,13 @@ class SearchPage extends StatelessWidget {
         child: const Icon(Icons.arrow_back),
       ),
       centerTitle: true,
-      title: const Text("Search result",
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 16,
-        color: Color.fromRGBO(37, 43, 92, 1),
-      ),
+      title: const Text(
+        "Search result",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 16,
+          color: Color.fromRGBO(37, 43, 92, 1),
+        ),
       ),
       actions: [
         Container(
