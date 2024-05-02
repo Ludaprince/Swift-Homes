@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -94,7 +95,47 @@ class SearchPage extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                // height: 300,
+                // width: 200,
+                // margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Image(
+                      height: 150,
+                      width: 150,
+                      image: AssetImage("assets/danger.png"),
+                    ),
+                  ],
+                ),
+              ),
+              // const SizedBox(height: 39),
+              RichText(
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Search",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.normal,
+                        color: Color.fromRGBO(3, 43, 92, 1),
+                      ),
+                    ),
+                    TextSpan(
+                      text: " ",
+                    ),
+                    TextSpan(
+                      text: "not found",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(3, 43, 92, 1),
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
