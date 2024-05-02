@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 
@@ -71,42 +70,25 @@ class SearchPage extends StatelessWidget {
                     ),
                     const Spacer(),
                     Container(
-                      width: 93,
-                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      width: 80,
+                      // padding: const EdgeInsets.symmetric(vertical: 8),
                       decoration: BoxDecoration(
-                        color: const Color.fromRGBO(161, 165, 193, 1),
-                        borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromRGBO(245, 244, 248, 100),
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Image(
-                              height: 12,
-                              width: 12,
-                              image: AssetImage("assets/roundpic.png"),
-                            ),
+                          Image(
+                            height: 35,
+                            width: 40,
+                            image: AssetImage("assets/show.png"),
                           ),
-                          Container(
-                            height: 24,
-                            width: 36,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 6),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Colors.white,
-                            ),
-                            child: const Row(
-                              children: [
-                                Image(
-                                  height: 12,
-                                  width: 12,
-                                  image: AssetImage("assets/roundpic.png"),
-                                ),
-                              ],
-                            ),
-                          )
+                          Image(
+                            height: 45,
+                            width: 20,
+                            image: AssetImage("assets/show2.png"),
+                          ),
                         ],
                       ),
                     )
