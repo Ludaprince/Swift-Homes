@@ -96,11 +96,10 @@ class SearchPage extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 100),
               const SizedBox(
-                // height: 300,
-                // width: 200,
-                // margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image(
                       height: 150,
@@ -110,7 +109,6 @@ class SearchPage extends StatelessWidget {
                   ],
                 ),
               ),
-              // const SizedBox(height: 39),
               RichText(
                 text: const TextSpan(
                   children: [
@@ -136,6 +134,21 @@ class SearchPage extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              Container(
+                margin: const EdgeInsets.only(left: 14, right: 15),
+                child: const Text(
+                  "Sorry, we can't find the real estates you are looking for. Maybe, a little spelling mistake?",
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                    color: Color.fromRGBO(83, 88, 122, 1),
+                  ),
+                ),
+              )
             ],
           ),
         ),
